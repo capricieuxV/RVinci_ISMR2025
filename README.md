@@ -74,11 +74,12 @@ roslaunch dvrk_video jhu_daVinci_video.launch
 ```
 
 Run the calibration file (.py) program from ros package:
-To calibrate the camera, you will need a 5mm 12x10 checkerboard. Placing it in front of the camera. By moving and rotating, you will see lines across the grid. If all directions and scales are in the color of 'green', and 'calibrate' and 'save' buttons are able to be clicked, you are almost done with the calibration. If not, repeat movement and rotation. 
+To calibrate the camera, you will need a 4.5mm 12x10 checkerboard(You can change the size of the grid, but remember to change the corresponding command below, where 0.0045 after --square means it is using 4.5mm gird with square shape, and 10x12 after --size means it is a 10x12 checkerboard). Placing it in front of the camera. By moving and rotating, you will see lines across the grid. If all directions and scales are in the color of 'green', and 'calibrate' and 'save' buttons are able to be clicked, you are almost done with the calibration. If not, repeat movement and rotation. 
 
 ```bash
 rosrun camera_calibration cameracalibrator.py --size 10x12 --square 0.0045 right:=/jhu_daVinci/right/decklink/jhu_daVinci_right/image_raw left:=/jhu_daVinci/left/decklink/jhu_daVinci_left/image_raw right_camera:=/jhu_daVinci/right/decklink left_camera:=/jhu_daVinci/left/decklink --approximate=0.050
 ```
+
 If there is no camera_calibration package found in local, please visit ros.org for further installation tutorial.
 
 
